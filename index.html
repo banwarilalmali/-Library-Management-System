@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Library Management System</h1>
+      <!-- <p>Simple Student and Book Record</p> -->
+    </header>
+
+    <nav>
+      <button onclick="showPage('dashboard')">Dashboard</button>
+      <button onclick="showPage('registration')">Student Registration</button>
+      <button onclick="showPage('profile')">Student Profile</button>
+      <button onclick="showPage('books')">Book Management</button>
+    </nav>
+
+    <main>
+      <!-- 1. Dashboard -->
+      <section id="dashboard" class="page">
+        <h2>Dashboard</h2>
+        <p class="intro">A quick look at the library records.</p>
+        <div class="summary">
+          <div class="summary-card">
+            <h3>Total Students</h3>
+            <p id="totalStudents">0</p>
+          </div>
+          <div class="summary-card">
+            <h3>Total Books</h3>
+            <p id="totalBooks">0</p>
+          </div>
+          <div class="summary-card">
+            <h3>Available Books</h3>
+            <p id="availableBooks">0</p>
+          </div>
+          <div class="summary-card">
+            <h3>Issued Books</h3>
+            <p id="issuedBooks">0</p>
+          </div>
+        </div>
+        <!-- <h3>About This Project</h3> -->
+        <!--<p>This is a frontend project made with HTML, CSS and JavaScript. It helps manage student details and basic library book records.</p>-->
+      </section>
+
+      <!-- 2. Student Registration -->
+      <section id="registration" class="page" hidden>
+        <h2>Student Registration</h2>
+        <p class="intro">Enter the student's details below.</p>
+        <form id="studentForm">
+          <label for="studentName">Full Name</label>
+          <input
+            id="studentName"
+            type="text"
+            placeholder="Enter student name"
+            required
+          />
+
+          <label for="rollNumber">Roll Number</label>
+          <input
+            id="rollNumber"
+            type="text"
+            placeholder="Enter roll number"
+            required
+          />
+
+          <label for="branch">Branch</label>
+          <select id="branch" required>
+            <option value="">Select branch</option>
+            <option>B.Tech CSE</option>
+            <option>B.Tech IT</option>
+            <option>B.Tech ECE</option>
+            <option>BCA</option>
+            <option>BBA</option>
+            <option>Other</option>
+          </select>
+
+          <label for="semester">Semester</label>
+          <select id="semester" required>
+            <option value="">Select semester</option>
+            <option>1st Semester</option>
+            <option>2nd Semester</option>
+            <option>3rd Semester</option>
+            <option>4th Semester</option>
+            <option>5th Semester</option>
+            <option>6th Semester</option>
+            <option>7th Semester</option>
+            <option>8th Semester</option>
+          </select>
+
+          <label for="section">Section</label>
+          <input id="section" type="text" placeholder="e.g. A" />
+
+          <label for="mobile">Mobile Number</label>
+          <input id="mobile" type="tel" placeholder="Enter mobile number" />
+
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Enter email address" />
+
+          <button type="submit" class="primary">Register Student</button>
+        </form>
+      </section>
+
+      <!-- 3. Student Profile -->
+      <section id="profile" class="page" hidden>
+        <h2>Student Profile</h2>
+        <p class="intro">Search students and view their library records.</p>
+        <input
+          id="studentSearch"
+          type="text"
+          placeholder="Search by name or roll number"
+          oninput="displayStudents()"
+        />
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Branch</th>
+                <th>Semester</th>
+                <th>Mobile</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="studentList"></tbody>
+          </table>
+        </div>
+        <div id="studentDetails" class="details-box" hidden></div>
+      </section>
+
+      <!-- 4. Book Management -->
+      <section id="books" class="page" hidden>
+        <h2>Book Management</h2>
+        <p class="intro">Add books or issue and return them.</p>
+        <form id="bookForm" class="book-form">
+          <div>
+            <label for="bookName">Book Name</label
+            ><input
+              id="bookName"
+              type="text"
+              placeholder="Enter book name"
+              required
+            />
+          </div>
+          <div>
+            <label for="bookAuthor">Author Name</label
+            ><input
+              id="bookAuthor"
+              type="text"
+              placeholder="Enter author name"
+              required
+            />
+          </div>
+          <div>
+            <label for="bookCategory">Category</label>
+            <select id="bookCategory" required>
+              <option value="">Select category</option>
+              <option>DSA</option>
+              <option>Operating System</option>
+              <option>DBMS</option>
+              <option>Programming</option>
+              <option>Computer Networks</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <button type="submit" class="primary">Add Book</button>
+        </form>
+        <input
+          id="bookSearch"
+          type="text"
+          placeholder="Search by book name, author or category"
+          oninput="displayBooks()"
+        />
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Issue To</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="bookList"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>Library Management System | HTML, CSS and JavaScript</footer>
+    <script src="script.js"></script>
+  </body>
+</html>

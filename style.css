@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6fa;
+    color: #263445;
+    line-height: 1.5;
+}
+
+header {
+    background: #245b8f;
+    color: white;
+    text-align: center;
+    padding: 22px 12px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+nav {
+    background: #ffffff;
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #d6e0eb;
+}
+
+button {
+    background: #e5edf6;
+    color: #24496d;
+    border: 1px solid #c7d7e8;
+    border-radius: 4px;
+    padding: 9px 13px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #d5e5f5;
+}
+
+button.primary {
+    background: #245b8f;
+    color: white;
+    border: none;
+}
+
+button.primary:hover {
+    background: #19456f;
+}
+
+main {
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.page {
+    background: white;
+    border: 1px solid #dce4ed;
+    border-radius: 7px;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #245b8f;
+    margin-top: 0;
+}
+
+h3 {
+    color: #344b63;
+}
+
+.intro {
+    color: #657487;
+    margin-top: -8px;
+    margin-bottom: 20px;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 20px 0 28px;
+}
+
+.summary-card {
+    background: #edf4fb;
+    border: 1px solid #d5e3f1;
+    border-left: 4px solid #397bb5;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.summary-card h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.summary-card p {
+    margin: 8px 0 0;
+    font-size: 27px;
+    font-weight: bold;
+    color: #245b8f;
+}
+
+form:not(.book-form) {
+    max-width: 600px;
+}
+
+label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5df;
+    border-radius: 4px;
+    background: white;
+    font: inherit;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #b7d5f0;
+    border-color: #397bb5;
+}
+
+form button.primary {
+    margin: 18px 0 0;
+}
+
+#studentSearch, #bookSearch {
+    max-width: 420px;
+    margin: 5px 0 15px;
+}
+
+.book-form {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr auto;
+    align-items: end;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.book-form label {
+    margin-top: 0;
+}
+
+.book-form button {
+    margin: 0 0 1px;
+    min-height: 42px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #d8e0e8;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background: #eaf1f8;
+    color: #24496d;
+}
+
+.status {
+    font-weight: bold;
+    color: #287448;
+}
+
+.status.issued {
+    color: #a45b19;
+}
+
+.small-button {
+    padding: 6px 9px;
+    font-size: 12px;
+}
+
+.delete-button {
+    background: #f8e7e7;
+    color: #9b3030;
+    border-color: #edcaca;
+}
+
+.details-box {
+    background: #f4f8fc;
+    border: 1px solid #d5e3f1;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 18px;
+    color: #667789;
+    font-size: 13px;
+}
+
+@media (max-width: 750px) {
+    .summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .book-form {
+        grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 23px;
+    }
+}
